@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>PAPA NOEl</title>
+    <link rel="stylesheet" href="style/juega.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
+</head>
+
+<body>
+<section id="juegos">
+    <nav>
+        <ul id="main-menu" class="main-menu">
+            <li class="main-menu_item casa-item">
+                <a href="index.html" class="main-menu_link">
+                <img src="images/casa.svg" alt="casa" class="casa">
+                </a></li>
+            <li class="main-menu_item">
+                <h3 class="main-menu_link">Juega</h3>
+            </li>
+        </ul>
+    </nav>
+    <!--JUEGA -->
+    <h1 style="display: none;">JUEGA</h1>
+    <section id="juega">
+        <div class="games">
+            <div class="columna1">
+                <ul>
+                    <li><button class="game-selec" onclick="mostrarJuego('juego1')">ATRAPA</button></li>
+                    <li><button class="game-selec" onclick="mostrarJuego('juego2')">MEMORIZA</button></li>
+                    <li><button class="game-selec" onclick="mostrarJuego('juego3')">ESCAPA</button></li>
+                </ul>
+            </div>
+            <div class="columna2">
+                <div id="juegoDef" class="img-juego">
+                    <img src="../src/images/elige.png" alt="juegoDef">
+                </div>
+                
+                <!-- Juego 1 -->
+                <div id="juego1" class="contenedor-juego1" style="display:none;">
+                    <div id="juego1-inicio" class="pantalla-inicio">
+                        <h2>Recoge los regalos perdidos</h2>
+                        <p class="instrucciones">Utiliza el ratón para poder coger la mayor cantidad de regalos que puedas para Papá Noel</p>
+                        <button class="btnEmpezar" id="btnEmpezar1">EMPEZAR</button>
+                    </div>
+                    <p id="score_container">Regalos: <span id="score">0</span></p>
+                    <p id="timer_container">Tiempo Restante: <span id="timer">30s</span></p>
+                    <div class="play-container">
+                        <img id="regalo" src="images/regalo1.svg" alt="regalo">
+                    </div>
+                    <div id="juego1-final" class="pantalla-final" style="display: none;">
+                        <h2>¡Juego terminado!</h2>
+                        <h2 id="puntos_finales"> Regalos conseguidos: <span id="valor_final">0</span></h2>
+                        <button class="btnEmpezar" id="btnReiniciar1">Reiniciar</button>
+                    </div>
+                    
+                </div>
+                <script src="script/juego1.js"></script>
+                
+                <!-- Juego 2 -->
+                <div id="juego2" class="contenedor-juego2" style="display:none;">
+                    <div id="juego2-inicio" class="pantalla-inicio">
+                        <h2>¡Memoria!</h2>
+                        <p class="instrucciones">Encuentra las parejas volteando las cartas pulsandolas con el ratón</p>
+                        <button class="btnEmpezar" id="btnEmpezar2">EMPEZAR</button>
+                    </div>
+                    <p id="timeDisplay" style="display:none;">Tiempo restante: <span id="time2">90</span> s</p>
+                    <div class="game-board2">
+                        <!-- aquí se generarán dinámicamente las cartas -->
+                    </div>
+                    <div id="juego2-final" class="pantalla-final" style="display: none;">
+                        <h2 id="mensaje-exito" style="display:none;">¡Has conseguido emparejar todas las cartas!</h2>
+                        <div id="mensaje-fracaso" style="display:none;">
+                            <h2>Mala suerte...</h2>
+                            <h2>Sigue intentándolo y lo conseguirás</h2>
+                        </div>
+                        <button class="btnEmpezar" id="btnReiniciar2">Reiniciar</button>
+                    </div>
+                </div>
+                <script src="script/juego2.js"></script>
+    
+                <!-- Juego 3 -->
+                <div id="juego3" class="contenedor-juego3" style="display:none;">
+                    <div id="juego3-inicio" class="pantalla-inicio">
+                        <h2>¡Escapa del GriNch!</h2>
+                        <p class="instrucciones">Utiliza las flechas del teclado para intentar que el Grinch no te coja</p>
+                        <button class="btnEmpezar" id="btnEmpezar3">EMPEZAR</button>
+                    </div>
+                    <div class="container-juego3">
+                        <div id="tablero">
+                            <div id="jugador" class="personaje"></div>
+                            <div id="grinch" class="personaje"></div>
+                            <p class="temporizador">Tiempo restante: <span id="temporizador3"> 20</span> s</p>
+                        </div>
+                    </div>
+                    <div id="juego3-final" class="pantalla-final" style="display: none;">
+                        <h2 id="mensaje-final3">¡Gracias!</h2>
+                        <button class="btnEmpezar" id="btnReiniciar3">Reiniciar</button>
+                    </div>
+                </div>
+                <script src="script/juego3.js"></script>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <ul class="iconos-redes">
+        <li class="enlace-icono">
+            <a href="https://www.youtube.com/@SantaClausOficial" class="icono">
+                <img src="images/F_Youtube.png" alt="Youtube">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://www.instagram.com/santaclaus/" class="icono">
+                <img src="images/F_Instagram.png" alt="Instagram">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://x.com/ofcSantaClaus" class="icono">
+                <img src="images/F_X.png" alt="Twitter">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://uk.linkedin.com/in/santaclausnspcc?trk=people-guest_people_search-card" class="icono">
+                <img src="images/F_Linkedin.png" alt="Linkedin">
+            </a>
+        </li>
+    </ul>
+    
+    <p class="derechos-autor">@2024 | Todos los derechos reservados</p>
+</footer>
+
+<script>
+    function mostrarJuego(juegoId) {
+        const juegos = document.querySelectorAll('.contenedor-juego1, .contenedor-juego2, .contenedor-juego3');
+        const juegoDef = document.getElementById('juegoDef');
+        
+        juegos.forEach(juego => juego.style.display = 'none');
+        
+        const juegoSeleccionado = document.getElementById(juegoId);
+        if (juegoSeleccionado) {
+            juegoSeleccionado.style.display = 'block';
+            if (juegoDef) {
+                juegoDef.style.display = 'none';
+            }
+        } else {
+            if (juegoDef) {
+                juegoDef.style.display = 'block';
+            }
+        }
+    }
+</script>
+<script src="script/juega.js"></script>
+</body>
+</html>

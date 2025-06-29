@@ -1,0 +1,630 @@
+body {
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    font-size: 2vh;
+    background-color: white;
+    color: black;
+}
+
+
+button {
+    font-family: 'cookies', Verdana;
+    background-color: transparent; /* fondo transparente */
+    border: transparent; /* borde transparente */
+    cursor: pointer; /* para que se ponga el cursor de ratón encima de los botones */
+    background-color: transparent;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+nav {
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*fuentes*/
+@font-face {
+    font-family: 'Spiny Lobster';
+    src: url(../fonts/SpinyLobster.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cookies';
+    src: url(../fonts/Cookies\ Magis.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CareAround';
+    src: url(../fonts/CareAround.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*navegador principal*/
+.main-menu {
+    padding-top: 0;
+    margin-top: 0;
+    padding: 1vh 0;
+    width: auto;
+    height: auto;
+    background-color: #CBDFBD;
+    display: flex; 
+    justify-content: space-between; /* para la derecha*/
+    align-items: center;
+    list-style-type: none;
+    flex-direction: row;
+}
+
+.main-menu_item {
+    margin: 0.5vw 0;
+    float: left;
+    display: flex;
+    padding-right: 3vw;
+    padding-left: 2vw;
+    align-items: center;
+    height: 5vh; /*que vaya variando la height y eso*/
+    transition: all 0.3s ease; /* transición */                
+}
+
+.casa{
+    width: 2vw;
+    height: auto;
+}
+
+.main-menu_link {
+    font-family: 'Spiny Lobster', Verdana;
+    display: flex;
+    font-size: 1.1vw;
+    color: #737E6B;
+    background-color: transparent;
+    align-items: center;        
+    justify-content: center;        
+    transition: all 0.3s ease;
+}
+
+/*MAIN MENU RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .main-menu_link {
+        font-size: 2vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 3vw;
+    }
+}
+
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+    .main-menu_link {
+        font-size: 4vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 5vw;
+    }
+}
+
+
+/*CALENDARIO*/
+/*DESKTOP Y TABLET*/
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+    height: 100vh;
+}
+
+.calendario{
+    background-image: url(../images/calendario\ de\ adviento.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.numeros .numero {
+    width: 100%; 
+    cursor: pointer;
+}
+
+.numeros {
+    width: 60vw; 
+    height: 50vw;
+}
+
+.numero {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numero p{
+    font-family: 'CareAround', Verdana;
+    font-size: 3vw;
+}
+
+/*ESTILOS PARA TODOS LOS NUMEROS*/
+/*estan puestos en una posicion absoluta con respecto al contenedor, por lo que como cada uno tiene un tamaño distinto hay que ponerles distintos valores*/
+#numero1{
+    width: 20.3%;
+    height: 11.6%;
+    top: 0;
+    left: 3%;
+}
+
+
+#numero2{
+    width: 12.6%;
+    height: 11.6%;
+    top: 0;
+    left: 25.6%;   
+}
+
+#numero3{
+    width: 12.7%;
+    height: 11.6%;
+    top: 0;
+    left: 40.4%;
+}
+
+
+#numero4{
+    width: 28.3%;
+    height: 11.6%;
+    top: 0;
+    left: 55.1%;
+    justify-content: flex-start;
+}
+
+#numero4 p{
+    margin-left: 17%;
+
+}
+
+#numero5{
+    width: 12.6%;
+    height: 11.6%;
+    top: 0;
+    left: 85.9%;
+    align-items: flex-end;
+}
+
+#numero5 p{
+    margin-bottom: 30%;
+}
+
+#numero6{
+    -color: #4D5447;
+    width: 20.3%;
+    height: 15%;
+    top: 13.8%;
+    left: 3%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#numero6 p{
+    font-size: 2.5vw;
+    margin-right: 5%;
+    margin-bottom: 30%;
+
+}
+
+#numero7{
+    width: 19.7%;
+    height: 15%;
+    top: 13.8%;
+    left: 25.6%;
+}
+
+
+#numero8{
+    width: 20.2%;
+    height: 15%;
+    top: 13.8%;
+    left: 47.8%;
+    justify-content: flex-end;
+}
+
+#numero8 p{
+    margin-right: 10%;
+    margin-top: 0;
+}
+
+#numero9{
+    width: 28.3%;
+    height: 15%;
+    top: 13.8%;
+    left: 70.2%;
+}
+
+#numero9 p{
+    margin-left: 60%;
+}
+
+#numero10{ 
+    width: 20.7%;
+    height: 29.3%;
+    top: 31.1%;
+    left: 3%;
+    align-items: flex-start;
+}
+
+#numero10 p{
+    margin-top: 10%;
+    margin-left: 60%;
+}
+
+#numero11{
+    width: 28.2%;
+    height: 13.7%;
+    top: 31.1%;
+    left: 25.6%;
+    justify-content: flex-start;
+}
+
+#numero11 p{
+    margin-left: 10%;
+}
+
+#numero12{
+    width: 28.2%;
+    height: 12.4%;
+    top: 47.9%;
+    left: 25.6%;
+    justify-content: flex-end;
+}
+
+#numero12 p{
+    margin-right: 10%;
+}
+
+#numero13{
+    width: 12.6%;
+    height: 20.2%;
+    top: 31%;
+    left: 56.3%;
+}
+
+
+#numero14{
+    width: 12.6%;
+    height: 20.2%;
+    top: 31%;
+    left: 71.3%;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#numero14 p{
+    margin-top: 5%;
+    margin-right: 10%;
+}
+
+#numero15{
+    width: 12.6%;
+    height: 20.2%;
+    top: 31.1%;
+    left: 85.8%;
+}
+
+
+#numero16{
+    width: 20.2%;
+    height: 14.9%;
+    top: 63.6%;
+    left: 3%;
+}
+
+#numero16 p{
+    margin-left: 50%
+}
+
+
+#numero17{
+    width: 28.2%;
+    height: 14.9%;
+    top: 63.6%;
+    left: 25.6%;
+    justify-content: flex-end;
+}
+
+#numero17 p{
+    margin-right: 10%;
+}
+
+#numero18{ 
+    width: 18.8%;
+    height: 14%;
+    top: 53.5%;
+    left: 56.3%;
+}
+
+#numero19{
+    width: 20.5%;
+    height: 14%;
+    top: 53.5%;
+    left: 78%;
+}
+
+
+#numero20{
+    width: 20.2%;
+    height: 18.8%;
+    top: 81.1%;
+    left: 3%;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#numero20 p{
+    font-size: 2vw;
+    margin-top: 7%;
+    margin-right: 10%;
+}
+
+
+#numero21{
+    width: 12.6%;
+    height: 18.8%;
+    top: 81.1%;
+    left: 25.6%;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#numero21 p{
+    margin-top: 5%;
+    margin-right: 10%;
+}
+
+#numero22{
+    width: 12.6%;
+    height: 18.8%;
+    top: 81.1%;
+    left: 41.3%;
+}
+
+#numero23{
+    width: 14.4%;
+    height: 16.8%;
+    top: 69%;
+    left: 56.4%;
+}
+
+#numero23 p{
+    margin-top: 70%;
+}
+
+
+#numero24{
+    width: 14.4%;
+    height: 12.6%;
+    top: 87.3%;
+    left: 56.4%;
+}
+
+#numero24 p{
+    margin-top: 60%;
+    margin-right: 5%;
+}
+
+
+#numero25{ 
+    width: 25.2%;
+    height: 31%;
+    top: 69%;
+    left: 73.4%;
+    justify-content: flex-end;
+}
+
+#numero25 p{
+    font-size: 4vw;
+    margin-right: 5%;
+    margin-top: 90%
+}
+
+
+.texto{
+    width: 30vw;
+    margin-right: 3vw;
+}
+
+.texto p{
+    font-family: 'CareAround', Verdana;
+    font-size: 3vw;
+    margin-right: 2vw;
+}
+
+/*POPUPS*/
+/* Contenedor global de los popups */
+.gift-popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+    padding-top: 60px;
+}
+
+/* Contenido del popup */
+.gift-popup-content {
+    background-color: #E5EFDE;
+    margin: 5% auto 15% auto;
+    width: 30%;
+    border-radius: 2vw;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: animatezoom 0.6s;
+}
+
+/* Botones de cerrar */
+.gift-otherbtn {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 1.5vw;
+    padding-top: 1.5vh;
+}
+
+.gift-closebtn {
+    width: 1.5vw;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.gift-closebtn:hover {
+    opacity: 0.8;
+}
+
+/* Título del popup */
+h4 {
+    font-size: 6vh;
+    font-family: 'CareAround', Verdana;
+    padding-top: 10vh;
+    padding-bottom: 6vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color: #4D5447; 
+}
+
+/* Contenedor del formulario del popup */
+.gift-container {
+    padding: 2vw;
+    text-align: center;
+}
+
+/* Mensajes dentro del popup */
+.gift-message {
+    font-family: 'Spiny Lobster', Verdana;
+    font-size: 2.5vh;
+    color: #737E6B;
+    margin-bottom: 3vh;
+}
+
+/* Botones dentro del popup */
+.gift-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.gift-main-button {
+    background-color: #606959;
+    font-size: 2vh;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 2vh 5vw;
+    border-radius: 10vw;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin: 5vh 0;
+}
+
+.gift-main-button:hover {
+    background-color: #4D5447;
+    opacity: 0.8;
+}
+
+img{
+    width: 20vw;
+  }
+
+/* Animación para mostrar el popup */
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/*RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .gift-popup-content {
+        width: 50%;
+    }
+
+    img{
+        width: 30vw;
+    }
+
+    .gift-closebtn {
+        width: 3vw;
+    }
+
+}
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .texto {
+        text-align: center;
+    }
+    
+    .texto p{
+        font-size: 3vh;
+        margin-bottom: 10vh;
+        width: 40vw;
+    }
+
+    .numeros {
+        width: 90vw; 
+        height: 80vw;
+    }
+
+    .numero p{
+        font-family: 'CareAround', Verdana;
+        font-size: 5vw;
+    }
+
+    #numero6 p{
+        font-size: 4vw;
+    }
+    #numero20 p{
+        margin-right: 3%;
+        margin-top: 1%;
+        font-size: 4vw;
+    }
+
+    .gift-popup-content {
+        width: 80%;
+    }
+
+    img{
+        width: 50vw;
+    }
+
+    .gift-closebtn {
+        width: 4vw;
+    }
+
+
+}

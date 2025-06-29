@@ -1,0 +1,305 @@
+body {
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    font-size: 2vh;
+    color: black;
+    background-color: #F2F7EF;
+    display: flex;
+    flex-direction: column; /* Colocamos los elementos en columna */
+    min-height: 100vh; /* Aseguramos que el body llene la ventana */
+}
+
+
+* {
+    box-sizing: border-box;
+}
+nav {
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*fuentes*/
+@font-face {
+    font-family: 'Spiny Lobster';
+    src: url(../fonts/SpinyLobster.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cookies';
+    src: url(../fonts/Cookies\ Magis.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*navegador principal*/
+.main-menu {
+    padding-top: 0;
+    margin-top: 0;
+    padding: 1vh 0;
+    width: auto;
+    height: auto;
+    background-color: #CBDFBD;
+    display: flex; 
+    justify-content: space-between; /* para la derecha*/
+    align-items: center;
+    list-style-type: none;
+    flex-direction: row;
+}
+
+.main-menu_item {
+    margin: 0.5vw 0;
+    float: left;
+    display: flex;
+    padding-right: 3vw;
+    padding-left: 2vw;
+    align-items: center;
+    height: 5vh; /*que vaya variando la height y eso*/
+    transition: all 0.3s ease; /* transición */                
+}
+
+.casa{
+    width: 2vw;
+    height: auto;
+}
+
+.main-menu_link {
+    font-family: 'Spiny Lobster', Verdana;
+    display: flex;
+    font-size: 1.1vw;
+    color: #737E6B;
+    background-color: transparent;
+    align-items: center;        
+    justify-content: center;        
+    transition: all 0.3s ease;
+}
+
+/* Contenedor principal */
+.global {
+    width: 100%;
+    min-height: 100vh; /* Asegura que el contenedor principal ocupe al menos toda la altura de la ventana */
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #F2F7EF;
+    padding-bottom: 1rem;
+}
+
+.intro {
+    max-width: 30%;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro_text{
+    font-size: 3vw;
+    margin-bottom: 5%;
+    font-family: 'cookies', Verdana;
+}
+
+.intro_text {
+    font-size: 3vw;
+}
+
+
+/* Estilo del botón */
+.intro button {
+    font-family: 'Cookies', Verdana;
+    width: 30%;
+    background-color: #606959;
+    font-size: 3vh;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 5vw;
+    border-radius: 10vw;
+    margin: 5vh 0 2vh 0;
+    transition: all 0.3s ease;
+}
+
+.intro button:hover {
+    background-color:  #4D5447; 
+    transform: scale(1.05);
+}
+
+.intro button:active {
+    transform: scale(0.95);
+}
+
+/* Pantalla de inicio */
+.pantalla_inicio {
+    width: 40%;
+    height: 35vw;
+    margin-right: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('../images/localiza.svg');
+    background-size: 90%;
+    background-position: center;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Pop up localiza */
+
+.popup-localiza {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Contenido del pop-up */
+.contenido {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
+    width: 60%;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Imagen dentro del pop-up */
+.contenido img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+/* PAPA NOEL MAPA */
+
+#trineo-contenedor {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    transform-origin: center center; /* Punto de referencia para las transformaciones */
+}
+
+/* Estilo para el trineo (imagen) */
+#trineo {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover sobre el trineo */
+#trineo:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Animación al hacer clic */
+#trineo.clicked {
+    animation: clickAnimation 0.6s ease-out;
+}
+
+/* Definición de la animación */
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.3) rotate(15deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+/*RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .main-menu_link {
+        font-size: 2vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 3vw;
+    }
+    .contenido {
+        height: 50vw;
+    }
+}
+
+/* MOVIL */
+@media screen and (max-width: 700px) {
+    .main-menu_link {
+        font-size: 4vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 5vw;
+    }
+
+    .global {
+        display: flex;
+        flex-direction: column; /* Cambia a columna */
+        align-items: center;
+        justify-content: center;
+        gap: 15vw;
+    } 
+    .pantalla_inicio {
+        width: 60%;
+        text-align: center; 
+        display: flex;
+        align-items: center;
+        height: 50vw
+
+    }
+    .intro {
+        max-width: 60%;
+        text-align: center; 
+        display: flex;
+        align-items: center;
+    }
+
+    .pantalla_inicio {
+        margin-left: 8vw;
+    }
+
+    .intro_text{
+        font-size: 4vw;
+    }
+    .intro button {
+        font-size: 3vw;
+        width: 13vw;
+        border-radius: 0.5rem;
+    }
+    .contenido {
+        height: 75vw;
+        width: 90vw;
+    }
+
+    .contenido img {
+        height: 50vw;
+    }
+
+    #trineo-contenedor {
+        width: 17%;
+    }
+}

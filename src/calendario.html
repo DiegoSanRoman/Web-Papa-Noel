@@ -1,0 +1,132 @@
+<!-- CALENDARIO DE ADVIENTO-->
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>PAPA NOEl</title>
+    <link rel="stylesheet" href="style/calendario.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
+</head>
+
+<body>
+<section id="calendario">
+    <nav>
+        <ul id="main-menu" class="main-menu">
+            <li class="main-menu_item casa-item">
+                <a href="index.html" class="main-menu_link">
+                <img src="images/casa.svg" alt="casa" class="casa">
+                </a></li>
+            <li class="main-menu_item">
+                <h3 class="main-menu_link">CaleNdario</h3>
+            </li>
+        </ul>
+    </nav>
+    <!--CALENDARIO DE ADVIENTO -->
+    <div class="contenedor">
+        <div class="texto">
+            <p>Abre la casilla de hoy y encontrarás un regalo maravilloso</p>
+        </div>
+        <div class="calendario">
+            <div class="numeros">
+                <div class="numero" id="numero1"><p>1</p></div>
+                <div class="numero" id="numero2"><p>2</p></div>
+                <div class="numero" id="numero3"><p>3</p></div>
+                <div class="numero" id="numero4"><p>4</p></div>
+                <div class="numero" id="numero5"><p>5</p></div>
+                <div class="numero" id="numero6"><p>6</p></div>
+                <div class="numero" id="numero7"><p>7</p></div>
+                <div class="numero" id="numero8"><p>8</p></div>
+                <div class="numero" id="numero9"><p>9</p></div>
+                <div class="numero" id="numero10"><p>10</p></div>
+                <div class="numero" id="numero11"><p>11</p></div>
+                <div class="numero" id="numero12"><p>12</p></div>
+                <div class="numero" id="numero13"><p>13</p></div>
+                <div class="numero" id="numero14"><p>14</p></div>
+                <div class="numero" id="numero15"><p>15</p></div>
+                <div class="numero" id="numero16"><p>16</p></div>
+                <div class="numero" id="numero17"><p>17</p></div>
+                <div class="numero" id="numero18"><p>18</p></div>
+                <div class="numero" id="numero19"><p>19</p></div>
+                <div class="numero" id="numero20"><p>20</p></div>
+                <div class="numero" id="numero21"><p>21</p></div>
+                <div class="numero" id="numero22"><p>22</p></div>
+                <div class="numero" id="numero23"><p>23</p></div>
+                <div class="numero" id="numero24"><p>24</p></div>
+                <div class="numero" id="numero25"><p>25</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP PARA ABRIR REGALO -->
+    <div id="open-gift-popup" class="gift-popup">
+        <form id="open-gift-form" class="gift-popup-content animate">
+            <div class="gift-otherbtn">
+                <button type="button" onclick="cerrarPopup('open-gift-popup')">
+                    <img src="images/cerrar.svg" alt="Cerrar" class="gift-closebtn">
+                </button>
+            </div>
+            <h4>ABRIR REGALO</h4>
+            <div class="gift-container">
+                <p id="open-gift-message" class="gift-message">Haz click para abrir el regalo</p>
+                <div class="gift-button-container">
+                    <button type="button" onclick="abrirRegalo()" class="gift-main-button">Abrir Regalo</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- POPUP PARA MOSTRAR REGALO -->
+    <div id="gift-popup" class="gift-popup">
+        <form id="gift-form" class="gift-popup-content animate">
+            <div class="gift-otherbtn">
+                <button type="button" onclick="cerrarPopup('gift-popup')">
+                    <img src="images/cerrar.svg" alt="Cerrar" class="gift-closebtn">
+                </button>
+            </div>
+            <h4>REGALO</h4>
+            <div class="gift-container">
+                <p id="gift-message" class="gift-message"></p>
+                <!-- Elemento de imagen para mostrar el regalo -->
+                <img id="gift-image" src=".." alt="Imagen del regalo" class="gift-image">
+                <div class="gift-button-container">
+                    <button type="button" onclick="cerrarPopup('gift-popup')" class="gift-main-button">Cerrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+    <ul class="iconos-redes">
+        <li class="enlace-icono">
+            <a href="https://www.youtube.com/@SantaClausOficial" class="icono">
+                <img src="images/F_Youtube.png" alt="Youtube">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://www.instagram.com/santaclaus/" class="icono">
+                <img src="images/F_Instagram.png" alt="Instagram">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://x.com/ofcSantaClaus" class="icono">
+                <img src="images/F_X.png" alt="Twitter">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://uk.linkedin.com/in/santaclausnspcc?trk=people-guest_people_search-card" class="icono">
+                <img src="images/F_Linkedin.png" alt="Linkedin">
+            </a>
+        </li>
+    </ul>
+    
+    <p class="derechos-autor">@2024 | Todos los derechos reservados</p>
+</footer>
+<script src="script/calendario.js"></script>
+</body>
+</html>
+

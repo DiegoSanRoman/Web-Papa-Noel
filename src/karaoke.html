@@ -1,0 +1,95 @@
+<!-- KARAOKE-->
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAPA NOEL</title>
+    <link rel="stylesheet" href="style/karaoke.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
+</head>
+
+<body>
+<section id="karaoke">
+    <nav>
+        <ul id="main-menu" class="main-menu">
+            <li class="main-menu_item casa-item">
+                <a href="index.html" class="main-menu_link">
+                    <img src="images/casa.svg" alt="casa" class="casa">
+                </a>
+            </li>
+            <li class="main-menu_item">
+                <h3 class="main-menu_link">Karaoke</h3>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="contenedor">
+        <h1 style="display: none;">KARAOKE</h1>
+        <div class="flecha" style="display: none;">
+            <img src="images/flechaatras.svg" alt="Volver">
+        </div>
+        <!-- Contenedor de canciones -->
+        <div class="contenedor-canciones">
+            <div class="cancion" data-video="images/videos/allIWantForChristmas.MP4">
+                <img src="images/karaoke-allIWantForChristmas.jpg" alt="Mariah Carey - All I Want For Christmas Is You">
+            </div>
+            <div class="cancion" data-video="images/videos/señorita.MP4">
+                <img src="images/karaoke-señorita.jpeg" alt="Abraham Mateo - Señorita">
+            </div>
+            <div class="cancion" data-video="images/videos/elSecretoDeLasTortugas.MP4">
+                <img src="images/karaoke-elSecretoDeLasTortugas.jpg" alt="Maldita Nerea - El Secreto de las Tortugas">
+            </div>
+            <div class="cancion" data-video="images/videos/santaClausIsComing.MP4">
+                <img src="images/karaoke-santaClausIsComingToTown.jpeg" alt="Michael Bublé - Santa Claus Is Coming">
+            </div>
+        </div>
+
+        <!-- Contenedor del personaje -->
+        <div class="contenedor-personaje">
+            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExanVlZnM2OHd2MWZpZG85enV3NzdkMGwybWpwM2YyMzY3ZGtodXJpOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ciOGnfKleV3nc9NQHX/giphy.gif" alt="Elfo">
+        </div>
+
+        <!-- Contenedor del video -->
+        <div class="contenedor-video" style="display: none;">
+            <iframe id="karaoke-video" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <ul class="iconos-redes">
+        <li class="enlace-icono">
+            <a href="https://www.youtube.com/@SantaClausOficial" class="icono">
+                <img src="images/F_Youtube.png" alt="Youtube">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://www.instagram.com/santaclaus/" class="icono">
+                <img src="images/F_Instagram.png" alt="Instagram">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://x.com/ofcSantaClaus" class="icono">
+                <img src="images/F_X.png" alt="Twitter">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://uk.linkedin.com/in/santaclausnspcc?trk=people-guest_people_search-card" class="icono">
+                <img src="images/F_Linkedin.png" alt="Linkedin">
+            </a>
+        </li>
+    </ul>
+    
+    <p class="derechos-autor">@2024 | Todos los derechos reservados</p>
+</footer>
+
+<script src="script/karaoke.js"></script>
+</body>
+</html>
+
+

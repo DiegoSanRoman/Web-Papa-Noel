@@ -1,0 +1,58 @@
+.footer {
+    width: 100%;
+    background-color: #F2F7EF;
+    padding-top: 0.5rem;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Son los iconitos que salen como enlaces */
+.iconos-redes {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+}
+
+.enlace-icono {
+    list-style: none;
+}
+
+.icono img {
+    width: 2vw;
+    max-width: 50px; 
+    min-width: 25px; 
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 500px) {
+    .icono img {
+        width: 5vw; 
+    }
+    .iconos-redes {
+        gap: 5vw;
+    }
+}
+
+.icono {
+    display: flex;
+    transition: 0.5s;
+}
+
+.icono:hover {
+    transform: translateY(-5px); 
+}
+
+/* Es el texto que sale al final con los derechos de autor */
+.derechos-autor {
+    color: black;
+    text-align: center;
+    margin-left: 35px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 500px) {
+    .derechos-autor {
+        font-size: 2.5vw;
+    }
+}

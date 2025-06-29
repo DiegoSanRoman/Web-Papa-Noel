@@ -1,0 +1,274 @@
+<!-- CREA TU ELFO-->
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>PAPA NOEl</title>
+    <link rel="stylesheet" href="style/elfo.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
+</head>
+
+<body>
+<section id="elfo">
+    <nav>
+        <ul id="main-menu" class="main-menu">
+            <li class="main-menu_item casa-item">
+                <a href="index.html" class="main-menu_link">
+                <img src="images/casa.svg" alt="casa" class="casa">
+                </a></li>
+            <li class="main-menu_item">
+                <h3 class="main-menu_link">Crea tu Elfo</h3>
+            </li>
+        </ul>
+    </nav>
+    <!--CREA TU ELFO -->
+    <div class="elfo-container">
+        <div class="instrucciones-texto2">
+            <h2>CREA</h2>
+            <p>Crea tu elfo personalizado con los accesorios que deseas</p>
+        </div>
+            <div class="elfo">
+                <!-- Imagen principal del elfo -->
+                <img id="elfo-foto" src="images/elfo/elfo.svg" alt="elfo" class="elfo-imagen"  style="display: none;">
+
+                <img id="elfo-ojos" src="images/elfo/ojos2.svg" alt="ojos" class="elfo-imagen-things">
+                <img id="elfo-boca" src="images/elfo/boca1.svg" alt="boca" class="elfo-imagen-things" style="display: none;">
+                <img id="elfo-pecas" src="images/elfo/pecas1.svg" alt="pecas" class="elfo-imagen-things" >
+                <img id="elfo-camiseta" src="images/elfo/camiseta.svg" alt="camiseta" class="elfo-imagen-things">
+                <img id="elfo-pantalon" src="images/elfo/pantalon.svg" alt="pantalones" class="elfo-imagen-things">
+                <img id="elfo-gafas" src="images/elfo/accesorio1.svg" alt="gafas" class="elfo-imagen-things"  style="display: none;" >
+                <img id="elfo-gorro" src="images/elfo/gorro.svg" alt="cara" class="elfo-imagen-things">
+                <img id="elfo-nariz" src="images/elfo/nariz1.svg" alt="accesorios" class="elfo-imagen-things" >
+                <img id="elfo-piel" src="images/elfo/cuerpo.svg" alt="piel" class="elfo-imagen">
+
+            <!-- Botones de personalización -->
+            <div class="botones">
+                <div class="botones-columna">
+                    <button id="cara" class="elfo-button"  onclick="mostrarPopupEstilos('cara', event)">
+                        <img src="images/elfo/cara.svg" alt="cara" class="elfo-button-img">
+                    </button>
+                    <button id="camiseta" class="elfo-button" onclick="mostrarPopupEstilos('camiseta', event)">
+                        <img src="images/elfo/camiseta.svg" alt="camiseta" class="elfo-button-img">
+                    </button>
+                    <button id="pantalones" class="elfo-button" onclick="mostrarPopupEstilos('pantalon', event)">
+                        <img src="images/elfo/pantalon.svg" alt="pantalones" class="elfo-button-img">
+                    </button>
+                    <button id="reiniciar" class="elfo-button reiniciar"  onclick="reiniciarEstilos('reiniciar')">
+                        <img src="images/cruz.svg" alt="reiniciar" class="elfo-button-img">
+                    </button>
+                </div>
+                <div class="botones-fila">
+                    <button id="accesorios" class="elfo-button"  onclick="mostrarPopupEstilos('accesorios', event)">
+                        <img src="images/elfo/gorro.svg" alt="accesorios" class="elfo-button-img">
+                    </button>
+                    <button id="piel" class="elfo-button"  onclick="mostrarPopupEstilos('piel', event)">
+                        <img src="images/elfo/cuerpo.svg" alt="piel" class="elfo-button-img">
+                    </button>
+                    <button id="reiniciar2" class="elfo-button reiniciar2"  onclick="reiniciarEstilos('reiniciar')">
+                        <img src="images/cruz.svg" alt="reiniciar" class="elfo-button-img">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <!-- Sección de instrucciones -->
+        <div class="instrucciones">
+            <div class="instrucciones-texto">
+                <h2>CREA</h2>
+                <p>Crea tu elfo personalizado con los accesorios que deseas</p>
+            </div>
+            <div class="instrucciones-boton">
+                <button id="guardar-elfo" class="guardar-boton" onclick="guardarElfo()">GUARDAR ELFO</button>
+            </div>
+
+            <!-- ESTILOS DE LOS ELFOS -->
+            <!-- CARA -->
+            <div id="estilos-popup-cara" class="estilos-popup oculto">
+                <div class="estilos-grid">
+                    <button class="estilo-item" onclick="seleccionarEstilo('boca3')">
+                        <img src="images/elfo/boca3.svg" alt="Boca 1">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('boca1')">
+                        <img src="images/elfo/boca1.svg" alt="Boca 2">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('boca2')">
+                        <img src="images/elfo/boca2.svg" alt="Boca 3">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('ojos1')">
+                        <img src="images/elfo/ojos1.svg" alt="Ojos 1">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('ojos2')">
+                        <img src="images/elfo/ojos2.svg" alt="Ojos 2">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('ojos3')">
+                        <img src="images/elfo/ojos3.svg" alt="Ojos 3">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('pecas1')">
+                        <img src="images/elfo/pecas1.svg" alt="Pecas 1">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('pecas2')">
+                        <img src="images/elfo/pecas2.svg" alt="Pecas 2">
+                    </button>
+                    <button class="estilo-item" onclick="reiniciarEstilos('cara')">
+                        <img src="images/cruz.svg" alt="Sin pantalón">
+                    </button>
+                </div>
+            </div>
+
+            <!-- CAMISETA -->
+            <div id="estilos-popup-camiseta" class="estilos-popup oculto">
+                <div class="estilos-grid">
+                    <button class="estilo-item" onclick="seleccionarEstilo('camiseta1')">
+                        <img src="images/elfo/camiseta1.svg" alt="Camiseta 1">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('camiseta2')">
+                        <img src="images/elfo/camiseta2.svg" alt="Camiseta 2">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('camiseta3')">
+                        <img src="images/elfo/camiseta3.svg" alt="Camiseta 3">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('camiseta4')">
+                        <img src="images/elfo/camiseta4.svg" alt="Camiseta 4">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('camiseta5')">
+                        <img src="images/elfo/camiseta5.svg" alt="Camiseta 5">
+                    </button>
+                    <button class="estilo-item" onclick="reiniciarEstilos('camiseta')">
+                        <img src="images/cruz.svg" alt="Sin pantalón">
+                    </button>
+                </div>
+            </div>
+
+            <!-- PANTALONES -->
+            <div id="estilos-popup-pantalon" class="estilos-popup oculto">
+                <div class="estilos-grid">
+                    <button class="estilo-item" onclick="seleccionarEstilo('pantalon1')">
+                        <img src="images/elfo/pantalon1.svg" alt="Pantalón 1">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('pantalon2')">
+                        <img src="images/elfo/pantalon2.svg" alt="Pantalón 2">
+                    </button>
+                    <button class="estilo-item" onclick="reiniciarEstilos('pantalon')">
+                        <img src="images/cruz.svg" alt="Sin pantalón">
+                    </button>
+                </div>
+            </div>
+
+            <!-- ACCESORIOS -->
+            <div id="estilos-popup-accesorios" class="estilos-popup oculto">
+                <div class="estilos-grid">
+                    <button class="estilo-item" onclick="seleccionarEstilo('gafas1')">
+                        <img src="images/elfo/gafas1.svg" alt="Accesorio 1">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('gafas2')">
+                        <img src="images/elfo/gafas2.svg" alt="Accesorio 2">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('gafas3')">
+                        <img src="images/elfo/gafas3.svg" alt="Accesorio 3">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('gorro7')">
+                        <img src="images/elfo/gorro7.svg" alt="Accesorio 4">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('nariz2')">
+                        <img src="images/elfo/nariz2.svg" alt="Accesorio 5">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('gorro1')">
+                        <img src="images/elfo/gorro1.svg" alt="Gorro 1">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('gorro2')">
+                        <img src="images/elfo/gorro2.svg" alt="Gorro 2">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('gorro3')">
+                        <img src="images/elfo/gorro3.svg" alt="Gorro 3">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('gorro4')">
+                        <img src="images/elfo/gorro4.svg" alt="Gorro 4">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('gorro5')">
+                        <img src="images/elfo/gorro5.svg" alt="Gorro 2">
+                    </button>
+                    <button class="estilo-item" onclick="reiniciarEstilos('accesorios')">
+                        <img src="images/cruz.svg" alt="Sin accesorios">
+                    </button>
+                </div>
+            </div>
+
+            <!-- PIEL -->
+            <div id="estilos-popup-piel" class="estilos-popup oculto">
+                <div class="estilos-grid">
+                    <button class="estilo-item" onclick="seleccionarEstilo('piel1')">
+                        <img src="images/elfo/piel1.svg" alt="Piel 1">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('piel2')">
+                        <img src="images/elfo/piel2.svg" alt="Piel 2">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('piel3')">
+                        <img src="images/elfo/piel3.svg" alt="Piel 3">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('piel4')">
+                        <img src="images/elfo/piel4.svg" alt="Piel 4">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('piel5')">
+                        <img src="images/elfo/piel5.svg" alt="Piel 5">
+                    </button>
+                    <button class="estilo-item" onclick="seleccionarEstilo('piel6')">
+                        <img src="images/elfo/piel6.svg" alt="Piel 6">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Popup para introducir el nombre del elfo -->
+            <div id="popup-nombre-elfo" class="elfos-popup">
+                <div class="modal-content animate">
+                    <div id="elfo-form">
+                        <div class="otherbtn">
+                            <button class="closebtn" onclick="cerrarPopupNombre()">
+                                <img src="images/cerrar.svg" alt="Cerrar">
+                            </button>
+                        </div>
+                        <div class="container-nombre">
+                            <h3>Nombre de tu elfo</h3>
+                            <p>¡Ponle nombre a tu elfo para poder guardarlo!</p>
+                            <label for="nombre-elfo" style="display: none;">Nombre del Elfo</label>
+                            <input type="text" id="nombre-elfo" placeholder="Escribe el nombre de tu elfo">
+                            <button id="guardar-nombre-elfo" onclick="guardarNombreElfo()">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+    <ul class="iconos-redes">
+        <li class="enlace-icono">
+            <a href="https://www.youtube.com/@SantaClausOficial" class="icono">
+                <img src="images/F_Youtube.png" alt="Youtube">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://www.instagram.com/santaclaus/" class="icono">
+                <img src="images/F_Instagram.png" alt="Instagram">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://x.com/ofcSantaClaus" class="icono">
+                <img src="images/F_X.png" alt="Twitter">
+            </a>
+        </li>
+        <li class="enlace-icono">
+            <a href="https://uk.linkedin.com/in/santaclausnspcc?trk=people-guest_people_search-card" class="icono">
+                <img src="images/F_Linkedin.png" alt="Linkedin">
+            </a>
+        </li>
+    </ul>
+    
+    <p class="derechos-autor">@2024 | Todos los derechos reservados</p>
+</footer>
+<script src="script/elfo.js"></script>
+</body>
+</html>
+

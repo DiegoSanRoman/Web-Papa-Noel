@@ -1,0 +1,119 @@
+<!-- MI PERFIL-->
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>PAPA NOEl</title>
+    <link rel="stylesheet" href="style/elfo.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/miPerfil.css">
+    <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
+</head>
+
+<body>
+<section id="perfil">
+    <nav>
+        <ul id="main-menu" class="main-menu">
+            <li class="main-menu_item casa-item">
+                <a href="index.html" class="main-menu_link">
+                <img src="images/casa.svg" alt="casa" class="casa">
+                </a></li>
+            <li class="main-menu_item">
+                <h3 class="main-menu_link">Mi perfil</h3>
+            </li>
+        </ul>
+    </nav>
+    <!--MI PERFIL -->
+    <div class="perfil">
+        <form id="perfil-form">
+            <div class="container">
+                <div class="imgcontainer">
+                    <img id="profile-edit-foto" src="images/foto-usuario.svg" alt="Avatar" class="foto-usuario">
+                    <label for="profile-edit-foto-input" style="display: none;">Subir foto de perfil</label>
+                    <input type="file" id="profile-edit-foto-input" accept="image/*" onchange="previewImagePerfil(event)" style="display: none;">
+                                    
+                    <!-- boton de menu para editar/eliminar foto dropdown-->
+                    <button id="profile-dropdown-btn" onclick="toggleProfileDropdown(event)">
+                        <img src="images/editar.svg" alt="Editar foto" class="profile-edit-btn">
+                    </button>
+                
+                    <!-- dropdown para editar/eliminar foto -->
+                    <div id="profile-dropdown-menu" class="profile-dropdown-menu" style="display: none;">
+                        <button onclick="subirFoto(event)">Subir una foto...</button>
+                        <button onclick="eliminarFotoPerfil()">Eliminar foto</button>
+                    </div>
+                </div>
+                
+                <div class="formulario">
+                    <h2>MI PERFIL</h2>
+                    <label for="edit-username" class="forms"><b>Username:</b></label>
+                    <input type="text" id="edit-username" name="edit-username" required>
+
+                    <label for="edit-password" class="forms"><b>Contraseña:</b></label>
+                    <input type="password" id="edit-password" name="edit-password" required>
+
+                    <label for="edit-email" class="forms"><b>Correo Electrónico:</b></label>
+                    <input type="email" id="edit-email" name="edit-email" required>
+
+                    <div class="button-container">
+                        <button type="button" onclick="guardarCambiosPerfil()" class="main-button">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+
+    <!--MIS REGALOS-->
+    <section class="regalos" id="regalos">
+        <h2>MIS REGALOS</h2>
+        <div class="regalos-container" id="regalos-container">
+            <!-- aqui se generan los regalos dinámicamente-->
+        </div>
+    </section>
+
+    <!-- MIS ELFOS -->
+    <div id="elfos-section">
+        <h2>Mis Elfos</h2>
+        <div id="elfos-container">
+            <!-- aqui se generan los elfos dinámicamente-->
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <ul class="iconos-redes">
+            <li class="enlace-icono">
+                <a href="https://www.youtube.com/@SantaClausOficial" class="icono">
+                    <img src="images/F_Youtube.png" alt="Youtube">
+                </a>
+            </li>
+            <li class="enlace-icono">
+                <a href="https://www.instagram.com/santaclaus/" class="icono">
+                    <img src="images/F_Instagram.png" alt="Instagram">
+                </a>
+            </li>
+            <li class="enlace-icono">
+                <a href="https://x.com/ofcSantaClaus" class="icono">
+                    <img src="images/F_X.png" alt="Twitter">
+                </a>
+            </li>
+            <li class="enlace-icono">
+                <a href="https://uk.linkedin.com/in/santaclausnspcc?trk=people-guest_people_search-card" class="icono">
+                    <img src="images/F_Linkedin.png" alt="Linkedin">
+                </a>
+            </li>
+        </ul>
+        
+        <p class="derechos-autor">@2024 | Todos los derechos reservados</p>
+    </footer>
+    
+
+<script src="script/miPerfil.js"></script>
+<script src="script/nav.js"></script>
+</body>
+</html>
+

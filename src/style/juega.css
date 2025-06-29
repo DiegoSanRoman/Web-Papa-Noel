@@ -1,0 +1,577 @@
+body {
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    font-size: 2vh;
+    background-color: #F2F7EF;
+    color: black;
+}
+
+button {
+    font-family: 'cookies', Verdana;
+    background-color: transparent; /* fondo transparente */
+    border: transparent; /* borde transparente */
+    cursor: pointer; /* para que se ponga el cursor de ratón encima de los botones */
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+nav {
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*fuentes*/
+@font-face {
+    font-family: 'Spiny Lobster';
+    src: url(../fonts/SpinyLobster.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cookies';
+    src: url(../fonts/Cookies\ Magis.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'CareAround';
+    src: url(../fonts/CareAround.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*navegador principal*/
+.main-menu {
+    padding-top: 0;
+    margin-top: 0;
+    padding: 1vh 0;
+    width: auto;
+    height: auto;
+    background-color: #CBDFBD;
+    display: flex; 
+    justify-content: space-between; /* para la derecha*/
+    align-items: center;
+    list-style-type: none;
+    flex-direction: row;
+}
+
+.main-menu_item {
+    margin: 0.5vw 0;
+    float: left;
+    display: flex;
+    padding-right: 3vw;
+    padding-left: 2vw;
+    align-items: center;
+    height: 5vh; /*que vaya variando la height y eso*/
+    transition: all 0.3s ease; /* transición */                
+}
+
+.casa{
+    width: 2vw;
+    height: auto;
+}
+
+.main-menu_link {
+    font-family: 'Spiny Lobster', Verdana;
+    display: flex;
+    font-size: 1.1vw;
+    color: #737E6B;
+    background-color: transparent;
+    align-items: center;        
+    justify-content: center;        
+    transition: all 0.3s ease;
+}
+
+/*MAIN MENU RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .main-menu_link {
+        font-size: 2vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 3vw;
+    }
+}
+
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+    .main-menu_link {
+        font-size: 4vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 5vw;
+    }
+}
+
+/*JUEGA*/
+#juega{
+    background-image: url(../images/fondoJuego.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/*contenedor de seccion que engloba todos los juegos*/
+.games{
+    display: flex;
+    justify-content: flex-start; 
+    
+}
+
+/*columna de los botones de los juegos*/
+.columna1{
+    height: 100%;
+    width: 40%;
+    flex-direction: column; 
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-left: 5vw;
+    padding: 10% 2%;
+    align-items: center;
+}
+
+.columna2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+#juegoDef img{
+    width: 40vw;
+}
+/*un poco de decoracion de la lista global de juegos*/
+.columna1 ul {
+    list-style-type: none;
+    margin: 0.2vw;
+    padding: 0;
+    
+}
+
+/*estilo de cada uno de los links de los juegos*/
+.columna1 li button{
+    font-family: 'cookies', Verdana;
+    font-style: bold;
+    font-size: 2vw;
+    width: 100%;    
+    background-color: #737E6B;
+    padding: 3vh 5vw;
+    margin: 1vh 0;
+    border-radius: 20px;
+    list-style: none;
+}
+
+.columna1 li button:hover{
+    background-color: #4D5447;
+    color: white;
+}
+
+/*estilo de los selectores de juegos*/
+.game-selec{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+.selected {
+    background-color: #4D5447 !important;
+}
+
+/*para que salga la imagen del juego que queremos*/
+.img-juego{   
+    border-radius: 0.75rem;
+}
+
+/*RESPONSIVE*/
+/*TABLET Y MOVIL */
+@media screen and (max-width: 900px){
+
+    .columna1 li button{
+        font-size: 2.5vw;
+    }
+
+    .columna1 ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mensaje-final3 {
+        font-size: 4vw;
+    }
+    
+}
+
+
+#juega h2{
+    font-family: 'Spiny Lobster', Verdana;
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.8vw;
+}
+
+/* Juego 1 */
+/* Contenedor principal del juego */
+.contenedor-juego1 {
+    width: 40vw; 
+    height: 40vw;
+    color: rgb(15, 54, 33);
+    background-image: url("../images/fondoJ1.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#timer_container {
+    position: absolute;
+    font-family: 'Cookies', Verdana;
+    color: black;
+    font-size: 2vh;
+    top: 0;
+    left: 0;
+    margin-left: 5%;
+    z-index: 500;
+    display: none;
+}
+
+#score_container {
+    position: absolute;
+    font-family: 'Cookies', Verdana;
+    color: black;
+    font-size: 2vh;
+    top: 0;
+    right: 0;
+    margin-right: 5%;
+    z-index: 500;
+    display: none;
+}
+
+.play-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+#puntos_finales {
+    font-size: 2.5vw;
+    display: none;
+}
+
+#regalo {
+    width: 3.5vw;
+    height: 3.5vw;
+    position: absolute;
+    cursor: pointer;
+    display: none;   
+}
+
+
+.btnEmpezar {
+    margin-top: 1vw;
+    color: white;
+    padding: 0 1.25vw;
+    border-radius: 10vw;
+    height: 5vh;
+    background-color:#606959;
+}
+
+.btnEmpezar:hover {
+    text-decoration: none;
+    background-color:  #4D5447; /* Animación para que al pasar el ratón se cambie de color */
+}
+
+/** Juego 2 */
+.contenedor-juego2 {
+      width: 40vw; 
+      height: 40vw; 
+      position: relative;
+  }
+
+.game-board2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1vw;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s; /*transicion para que gire*/
+    transform-style: preserve-3d; /*para que se vea 3D tope guapo*/
+    position: relative;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg); /*que haga el movimiento de girarse*/
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.card-front {
+    background-color: #CBDFBD;
+}
+
+.card-back {
+    background-color: #d9e4d1;
+    transform: rotateY(180deg); /*para que se vea la parte de atras*/
+    padding: 3vh;
+}
+
+#timeDisplay{
+    font-family: 'Cookies', Verdana;
+    color: black;
+    font-size: 2vh;
+    position: absolute;
+    bottom: 2vh;
+    right: 1vw;
+    z-index: 200;
+}
+
+#mensaje-fracaso{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*JUEGO 3*/
+.contenedor-juego3 {
+    color: rgb(15, 54, 33);
+    width: 40vw; 
+    height: 40vw;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-juego3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#tablero {
+    width: 100%;
+    height: 100%;
+    background-color: #CBDFBD;
+    background-image: url('../images/fondoJ2.svg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.personaje {
+    width: 5vw;
+    height: 5vw;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    top: 0;
+}
+
+#jugador {
+    background-image: url('../images/personaje.svg');
+    z-index: 2;
+}
+
+#grinch {
+    background-image: url('../images/grinch.png');
+    z-index: 2;
+}
+
+.temporizador{
+    font-family: 'Cookies', Verdana;
+    color: white;
+    font-size: 2vh;
+}
+/* Ajustes para las pantallas de inicio y final */
+.pantalla-inicio, .pantalla-final {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CBDFBD;
+    z-index: 10;
+}
+
+.instrucciones{
+    font-family: 'Cookies';
+    margin: 5vh 3vw;
+    font-size: 2vh;
+    text-align: center;
+}
+
+
+/* RESPONSIVE*/
+
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card-back {
+        padding: 2vh;
+    }
+
+    .card img {
+        min-width: 7vw;
+        max-height: 7vw;
+    }
+
+    #timeDisplay {
+        font-size: 2vh;
+        bottom: 0;
+        right: 0;
+      }
+}
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+    .games{
+        display: flex;
+        flex-direction: column; /*que se organice en columnas*/
+        align-items: center;
+    }
+
+    .columna1 li button{
+        font-size: 3vw;
+        width: 25vw;
+    }
+
+    .contenedor-juego1 {
+        width: 90vw;
+        height: 80vw;
+        margin: 0 auto;
+    }
+
+
+    .contenedor-juego2 {
+        display: block;
+        width: 300px;
+        height: 300px;
+    }
+    
+    #regalo {
+        width: 7vw;
+        height: 7vw;
+    }
+    #timer_container {
+        font-size: 3vw;
+    }
+    
+    #score_container {
+        font-size: 3vw;
+    }
+
+    #puntos_finales {
+        font-size: 4vw;
+    }
+
+    .btnEmpezar {
+        margin-top: 3vw;
+    }
+
+
+    .contenedor-juego3 {
+        width: 90vw;
+        height: 90vw;
+        margin: 0 auto;
+    }
+
+    #mensaje-final3 {
+        font-size: 4vw;
+    }
+    
+    .personaje {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #juega h2{
+        font-size: 3vh;
+    }
+
+
+    .game-board2 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+        width: 65px;
+        height: 65px;
+    }
+
+    .card-back {
+        padding: 2vh;
+    }
+
+    .card img {
+        min-width: 10vw;
+        max-height: 10vw;
+    }
+
+    #juegoDef img{
+        width: 90vw;
+    }
+
+    #timeDisplay {
+        font-size: 2vh;
+        bottom: 0;
+        right: 0;
+      }
+}

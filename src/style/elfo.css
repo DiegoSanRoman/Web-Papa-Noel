@@ -1,0 +1,848 @@
+body {
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    font-size: 2vh;
+    background-color: white;
+    color: black;
+}
+
+button {
+    font-family: 'cookies', Verdana;
+    background-color: transparent; /* fondo transparente */
+    border: transparent; /* borde transparente */
+    cursor: pointer; /* para que se ponga el cursor de ratón encima de los botones */
+    background-color: transparent;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+nav {
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*fuentes*/
+@font-face {
+    font-family: 'Spiny Lobster';
+    src: url(../fonts/SpinyLobster.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cookies';
+    src: url(../fonts/Cookies\ Magis.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CareAround';
+    src: url(../fonts/CareAround.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*navegador principal*/
+.main-menu {
+    padding-top: 0;
+    margin-top: 0;
+    padding: 1vh 0;
+    width: auto;
+    height: auto;
+    background-color: #CBDFBD;
+    display: flex; 
+    justify-content: space-between; /* para la derecha*/
+    align-items: center;
+    list-style-type: none;
+    flex-direction: row;
+}
+
+.main-menu_item {
+    margin: 0.5vw 0;
+    float: left;
+    display: flex;
+    padding-right: 3vw;
+    padding-left: 2vw;
+    align-items: center;
+    height: 5vh; /*que vaya variando la height y eso*/
+    transition: all 0.3s ease; /* transición */                
+}
+
+.casa{
+    width: 2vw;
+    height: auto;
+}
+
+.main-menu_link {
+    font-family: 'Spiny Lobster', Verdana;
+    display: flex;
+    font-size: 1.1vw;
+    color: #737E6B;
+    background-color: transparent;
+    align-items: center;        
+    justify-content: center;        
+    transition: all 0.3s ease;
+}
+
+/*MAIN MENU RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .main-menu_link {
+        font-size: 2vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 3vw;
+    }
+}
+
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+    .main-menu_link {
+        font-size: 4vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 5vw;
+    }
+}
+
+
+/*ELFOS*/
+/*DESKTOP*/
+.elfo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10vh;
+    margin-top: 20vh;
+    min-height: 100vh;
+}
+
+.elfo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20vw;
+    margin-right: 10vw;
+    top: 0;
+}
+
+#elfo-piel {
+    z-index: 0;
+    width: 15vw;
+    height: auto;
+    padding-right: 2vw;
+}
+
+/*COSAS DE EL ELFO*/
+/* posicionamiento para cada parte */
+/* es como el calendario, todo se posiciona con respecto al contenedor de elfo*/
+#elfo-piel{
+    margin-top: 4vh;
+    bottom: 0;
+}
+
+#elfo-ojos {
+    position: absolute;
+    z-index: 1;
+    top: 30%; 
+    left: 30%; 
+    width: 30%; 
+}
+
+#elfo-pecas {
+    position: absolute;
+    z-index: 1;
+    top: 34%;
+    left: 25%;
+    width: 40%;
+}
+
+#elfo-nariz{
+    position: absolute;
+    z-index: 2;
+    top: 38%; 
+    left: 44.5%;
+    width: 2.5%;
+}
+
+#elfo-boca {
+    position: absolute;
+    z-index: 2;
+    top: 43%; 
+    left: 41%; 
+    width: 10%;
+}
+
+#elfo-pelo {
+    position: absolute;
+    z-index: 2;
+    top: 0; 
+    left: 10%; 
+    width: 70%;
+}
+
+#elfo-camiseta {
+    position: absolute;
+    z-index: 2;
+    top: 53%;
+    left: 23.5%;
+    width: 43%;
+}
+
+#elfo-pantalon {
+    position: absolute;
+    z-index: 1;   
+    top: 72%;
+    left: 32.5%;
+    width: 25.5%;
+}
+
+#elfo-gafas {
+    position: absolute;
+    z-index: 3;
+    top: 25%;
+    left: 25%;
+    width: 40%;
+}
+
+#elfo-gorro {
+    position: absolute;
+    z-index: 3;
+    top: 2%;
+    left: 21%;
+    width: 55%;
+}
+
+
+.botones {
+    display: flex;
+    align-items: center;
+}
+
+.botones-columna{
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    gap: 1vw;
+    top: 0;
+    flex-direction: column;
+}
+.botones-fila{
+    z-index: 1;
+    position: absolute;
+    top: 24vw;
+    display: flex;
+    gap: 1vw;
+    left: 1vw;
+}
+
+.elfo-button {
+    background: none;
+    border: 1vh solid #A8B99C;
+    border-radius: 2vw;
+    padding: 0.5vw;
+    width: 7vw;
+    height: 7vw;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.elfo-button.reiniciar2{
+    display: none;
+}
+
+.elfo-button:hover {
+    transform: scale(1.1);
+}
+
+.elfo-button-img {
+    width: auto;
+    height: 5vh;
+}
+
+.estilos-popup.visible{
+    display: block;
+}
+
+.instrucciones {
+    width: 30vw;
+    height: 31vw;
+    font-family: Verdana;
+    text-align: center;
+    font-size: 3vh;
+    display: grid;
+    position: relative;
+
+}
+.instrucciones h2{
+    font-family: 'Spiny Lobster', Verdana;
+    font-size: 4vh;
+}
+
+.instrucciones-texto2 h2, .instrucciones-texto2 p{
+    display: none;
+}
+
+.instrucciones-boton{
+    align-self: end;
+
+}
+
+.guardar-boton {
+    font-family: 'Cookies', Verdana;
+    background-color: #606959;
+    font-size: 2vh;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4.5vh 7vw;
+    border-radius: 10vw;
+}
+
+.guardar-boton:hover {
+    background-color: #4D5447;
+}
+
+/* popup para los estilos del elfo */
+.estilos-popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24vw;
+    background-color: #E5EFDE;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: scroll;
+
+}
+
+.estilos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; 
+    justify-items: center;
+    align-items: center;
+}
+
+.estilo-item {
+    background-color: #FFFFFF;
+    border: 1vh solid #A8B99C;
+    border-radius: 2vw;
+    padding: 0.5vw;
+    width: 7vw;
+    height: 7vw;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.estilo-item img {
+    width: 5vw;
+    height: 5vw;
+    padding: 0.5vh;
+}
+
+
+/* popup para el nombre del elfo */
+.elfos-popup {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(5px); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #E5EFDE;
+    margin: 5% auto;
+    width: 30%;
+    height: 50%;
+    border-radius: 2vw;
+    animation: animatezoom 0.6s;
+    padding: 2vw;
+    position: relative;
+}
+
+/* botones de cerrar y acciones dentro del popup */
+.closebtn {
+    position: absolute;
+    top: 1vh;
+    right: 0.5vw;
+    width: 3vw;
+    height: 3vw;
+    
+}
+.closebtn img{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.closebtn:hover {
+    opacity: 0.8;
+}
+
+.container-nombre h3 {
+    font-family: 'Spiny Lobster', Verdana;
+    text-align: center;
+    font-size: 4vh;
+    margin-bottom: 2vh;
+}
+
+.container-nombre p{
+    margin: 5vh 0;
+    font-size: 2vh;
+}
+
+.container-nombre input[type="text"] {
+    width: 100%;
+    padding: 2vh;
+    margin: 1vh 0 2vh 0;
+    border: 1px solid #99A88E;
+    box-sizing: border-box;
+    font-size: 1.5vh;
+    border-radius: 0.5vw;
+}
+
+.container-nombre button {
+    width: 10vw;
+    padding: 1.5vh;
+    background-color: #606959;
+    color: white;
+    font-size: 2vh;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    margin: 3vh 0;
+}
+
+.container-nombre button:hover {
+    background-color: #4D5447;
+}
+
+
+
+/*RESPONSIVEEEEEEEE*/
+/*TABLET*/
+@media screen and (max-width: 800px) {
+
+    .elfo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10vh;
+        margin-top: 0;
+        height: 30vw;
+    }
+
+    .elfo {
+        margin: 0;
+    }
+
+    .instrucciones h2, .instrucciones p{
+        display: none;
+    }
+
+    .instrucciones-texto2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .instrucciones-texto2 h2{
+        margin-top: 10vh;
+        display: block;
+        font-family: 'Spiny Lobster', Verdana;
+        font-size: 4vw;        
+    }
+
+    .instrucciones-texto2 p{
+        display: block;
+        font-family: Verdana;
+        font-size: 2vw;
+        margin-bottom: 10vh;
+    }
+    
+
+    .botones {
+        display: flex;
+        align-items: center;
+    }
+
+    .botones-columna{
+        display: flex;
+        gap: 3vw;
+        top: 0;
+        right: -80%;
+        flex-direction: column;
+    }
+
+    .botones-fila{
+        display: flex;
+        gap: 3vw;
+        top: 0;
+        left: -80%;
+        flex-direction: column;
+    }
+
+    .elfo-button {
+        border-radius: 3vw;
+        padding: 0.5vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .elfo-button-img {
+        width: auto;
+        height: 3.5vw;
+    }
+
+    .elfo-button.reiniciar2{
+        display: block;
+    }
+
+    .elfo-button.reiniciar{
+        display: none;
+    }
+
+    
+    /*COSAS DE EL ELFO*/
+    /* Posicionamiento para cada parte */
+    #elfo-piel {
+        padding: 0;
+        margin: 0;
+        justify-self: center;
+        width: 25vw;
+        height: auto;
+    }
+
+    #elfo-ojos {
+        top: 26%; 
+        left: 30%; 
+        width: 44%; 
+    }
+    
+    #elfo-pecas {
+        top: 31%; 
+        left: 25%;
+        width: 54%;
+    }
+    
+    #elfo-nariz{
+        top: 34%; 
+        left: 49.5%; 
+        width: 5.5%;
+    }
+    
+    #elfo-boca {
+
+        top: 40%;
+        left: 44%; 
+        width: 17%;
+    }
+    
+    #elfo-pelo {
+        top: 0;
+        left: 10%; 
+        width: 70%;
+    }
+    
+    #elfo-camiseta {
+        top: 48%;
+        left: 9.5%;
+        width: 82%;
+    }
+    
+    #elfo-pantalon { 
+        top: 69%;
+        left: 26%;
+        width: 50%;
+    }
+    
+    #elfo-gafas {
+        top: 21%;
+        left: 18%;
+        width: 67%;
+    }
+    
+    #elfo-gorro {
+        top: -5%;
+        left: 3%;
+        width: 110%;
+    }
+
+
+    .estilos-popup {
+        top: 20%;
+        left: -35%;
+        width: 51.5vw;
+        height: 20vh;
+    }
+
+    .estilos-grid {
+        width:100%;
+        gap: 15px;
+    }
+
+    .estilo-item {
+        border-radius: 3vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .estilo-item img {
+        width: 7vw;
+        height: 7vw;
+        padding: 0.5vh;
+    }
+
+    .guardar-boton {
+        font-size: 3vh;
+        padding: 2vh 4vw;
+        border-radius: 10vw;
+    }
+    
+    /* popup para el nombre del elfo */
+    .modal-content {
+        width: 60%;
+        height: auto;
+    }
+
+    /* botones de cerrar y acciones dentro del popup */
+    .closebtn {
+        top: 2vh;
+        right: 2vw;
+    }
+
+    .closebtn img{
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .container-nombre h3 {
+        font-size: 5vh;
+    }
+
+    .container-nombre p{
+        display: block;
+        font-size: 3vh;
+    }
+
+    .container-nombre input[type="text"] {
+        font-size: 2vh;
+    }
+
+    .container-nombre button {
+        width: 15vw;
+        font-size: 3vh;
+    }
+
+}
+
+
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+
+    .instrucciones-texto2 h2{
+        margin-top: 0;
+        font-size: 5vw;
+    }
+
+    .elfo-container{
+        margin-top: 0;
+        margin-bottom: 20vh;
+        }
+    
+
+    .instrucciones-texto2 p{
+        font-size: 2.5vw;
+    }
+    
+
+    .botones {
+        display: flex;
+        align-items: center;
+    }
+
+    .botones-columna{
+        gap: 3vw;
+        top: 110%;
+        left: -80%;
+        right: 0;
+        width: 55vw;
+        flex-direction: row;
+    }
+
+    .botones-fila{
+        gap: 3vw;
+        top: 150%;
+        left: -80%;
+        right: 0;
+        width: 55vw;
+        flex-direction: row;
+    }
+
+    .elfo-button {
+        border-radius: 3vw;
+        padding: 0.5vw;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .elfo-button-img {
+        width: auto;
+        height: 5.5vw;
+    }
+
+    
+    /*COSAS DE EL ELFO*/
+    /* Posicionamiento para cada parte */
+    #elfo-piel {
+        width: 35vw;
+    }
+
+    #elfo-ojos {
+        top: 26%; 
+        left: 18%;
+        width: 65%;
+    }
+    
+    #elfo-pecas {
+        top: 31%; 
+        left: 10%;
+        width: 81%;
+    }
+    
+    #elfo-nariz{
+        top: 34%; 
+        left: 47.5%;
+        width: 8.5%;
+    }
+    
+    #elfo-boca {
+        top: 40%;
+        left: 39%;
+        width: 28%;
+    }
+    
+    #elfo-pelo {
+        top: 0;
+        left: 10%; 
+        width: 70%;
+    }
+    
+    #elfo-camiseta {
+        top: 48%;
+        left: -6.5%;
+        width: 114%;
+    }
+    
+    #elfo-pantalon { 
+        top: 69%;
+        left: 17%;
+        width: 69%;
+    }
+    
+    #elfo-gafas {
+        top: 21%;
+        left: -2%;
+        width: 105%;
+    }
+    
+    #elfo-gorro {
+        top: -4%;
+        left: -15%;
+        width: 152%;
+    }
+
+    .estilos-popup {
+        z-index: 2;
+        top: 15%;
+        left: -40%;
+        width: 52.5vw;
+        height: 26vh;
+    }
+
+    .estilos-grid {
+        width:100%;
+        gap: 15px;
+    }
+
+
+    .estilo-item {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .estilo-item img {
+        width: 8.5vw;
+        height: 8.5vw;
+    }
+
+    .guardar-boton {
+        margin-top: 38vh;
+        z-index: 0;
+        font-size: 2vh;
+        padding: 2vh 4vw;
+        border-radius: 10vw;
+    }
+
+    /* popup para el nombre del elfo */
+    .modal-content {
+        width: 85%;
+        height: auto;
+        padding: 4vw;
+    }
+
+
+    
+
+    /* botones de cerrar y acciones dentro del popup */
+    .closebtn {
+        top: 2vh;
+        right: 4vw;
+    }
+
+    .closebtn img{
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .container-nombre h3 {
+        font-size: 6vh;
+    }
+
+    .container-nombre p{
+        display: block;
+        font-size: 3vh;
+    }
+
+    .container-nombre input[type="text"] {
+        font-size: 2.5vh;
+    }
+
+    .container-nombre button {
+        width: 20vw;
+        font-size: 2.5vh;
+    }
+    
+    
+}
